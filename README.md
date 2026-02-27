@@ -1,70 +1,83 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frontend React — Agencia de Asistentes de Voz y Chatbots
 
-## Available Scripts
+SPA profesional para gestión de productos y reservas, consumiendo la API REST Node.js/Express. Cumple criterios de sobresaliente según rúbrica: código modular, validaciones, feedback, accesibilidad, documentación y despliegue.
 
-In the project directory, you can run:
+## Índice
+- [Descripción](#descripción)
+- [Estructura](#estructura)
+- [Instalación y uso](#instalación-y-uso)
+- [Scripts disponibles](#scripts-disponibles)
+- [Endpoints consumidos](#endpoints-consumidos)
+- [Reglas de negocio y validaciones](#reglas-de-negocio-y-validaciones)
+- [Criterios de sobresaliente](#criterios-de-sobresaliente)
+- [Despliegue](#despliegue)
 
-### `npm start`
+## Descripción
+SPA React para la gestión de productos y reservas de una agencia de asistentes de voz/chatbots. Permite CRUD completo, validaciones visuales y funcionales, feedback, navegación profesional y accesibilidad.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Estructura
+- `src/`
+  - `components/`: Navbar, Footer
+  - `pages/`: Home, products (list, form, detail), reservas (list, form, detail)
+  - `api/`: Servicios reutilizables para productos y reservas
+- `public/`: Archivos estáticos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalación y uso
+1. Instala dependencias:
+	```bash
+	npm install
+	```
+2. Inicia la app:
+	```bash
+	npm start
+	```
+3. Accede a [http://localhost:3001](http://localhost:3001) (o el puerto configurado)
 
-### `npm test`
+## Scripts disponibles
+- `npm start`: Modo desarrollo
+- `npm run build`: Compilar producción
+- `npm test`: Ejecutar tests
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Endpoints consumidos
+Ver [../docs/endpoints.md](../docs/endpoints.md) para detalles completos.
 
-### `npm run build`
+### Productos
+- `POST   /api/v1/products` — Crear producto
+- `GET    /api/v1/products?page=1&limit=10` — Listar productos
+- `GET    /api/v1/products/:id` — Obtener producto
+- `PUT    /api/v1/products/:id` — Actualizar producto
+- `DELETE /api/v1/products/:id` — Eliminar producto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Reservas
+- `POST   /api/v1/reserva/post` — Crear reserva
+- `GET    /api/v1/reserva/get/all?page=1&limit=10` — Listar reservas
+- `GET    /api/v1/reserva/get/:id` — Obtener reserva
+- `PATCH  /api/v1/reserva/update/:id` — Actualizar reserva
+- `DELETE /api/v1/reserva/delete/:id` — Eliminar reserva
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Reglas de negocio y validaciones
+Ver [../docs/reglas-negocio.md](../docs/reglas-negocio.md) para justificación completa.
+- No productos duplicados por nombre
+- Precio y stock no negativos
+- No reservar más que el stock disponible
+- No reservas en fechas pasadas
+- No reservas duplicadas (cliente, producto, fecha)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Validaciones visuales y feedback en formularios. Accesibilidad: roles, labels, navegación por teclado.
 
-### `npm run eject`
+## Criterios de sobresaliente
+- Código modular, componentes reutilizables
+- Validaciones y feedback claros
+- Accesibilidad y responsive (Bootstrap)
+- Navegación SPA profesional (React Router)
+- Documentación completa (README, endpoints, reglas, diagramas)
+- Despliegue estable y reproducible
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Despliegue
+1. Instala dependencias: `npm install`
+2. Ejecuta: `npm start` (desarrollo) o `npm run build` (producción)
+3. Configura el backend en `http://localhost:3000` o ajusta el endpoint en `src/api/`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+Para diagramas y arquitectura, ver [../docs/README.md](../docs/README.md).

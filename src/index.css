@@ -1,13 +1,257 @@
-body {
+
+/* Paleta Elexia */
+:root {
+  --elexia-primary: #2e7d5a;
+  --elexia-primary-dark: #20513a;
+  --elexia-accent: #3bb78f;
+  --elexia-bg: #f7f6f3;
+  --elexia-navbar: rgba(34, 40, 49, 0.92);
+  --elexia-card: #fff;
+  --elexia-card-shadow: 0 4px 24px 0 rgba(34,40,49,0.08);
+  --elexia-btn: #2e7d5a;
+  --elexia-btn-hover: #20513a;
+  --elexia-btn-secondary: #e0e0e0;
+  --elexia-footer: #23272b;
+  --elexia-footer-text: #e0e0e0;
+  --elexia-success: #3bb78f;
+  --elexia-danger: #e57373;
+  --elexia-font: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+body, #root, html {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--elexia-font);
+  min-height: 100vh;
+  color: #222;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: none;
+}
+
+.app-bg {
+  min-height: 100vh;
+  background: linear-gradient(rgba(34,40,49,0.80),rgba(34,40,49,0.80)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center center/cover no-repeat fixed;
+  background-blend-mode: overlay;
+}
+
+.container, .container-fluid {
+  background: transparent !important;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Navbar */
+.navbar-elexia {
+  background: var(--elexia-navbar) !important;
+  box-shadow: 0 2px 12px 0 rgba(34,40,49,0.08);
+}
+.navbar-elexia .navbar-brand {
+  font-weight: bold;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: var(--elexia-primary) !important;
+}
+.navbar-elexia .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  transition: color 0.2s;
+}
+.navbar-elexia .nav-link.active, .navbar-elexia .nav-link:focus, .navbar-elexia .nav-link:hover {
+  color: var(--elexia-accent) !important;
+}
+.navbar-elexia .btn-demo {
+  background: var(--elexia-primary);
+  color: #fff;
+  border-radius: 24px;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  margin-left: 1rem;
+  transition: background 0.2s;
+}
+.navbar-elexia .btn-demo:hover {
+  background: var(--elexia-btn-hover);
+}
+
+/* Hero */
+.hero-elexia {
+  background: linear-gradient(rgba(34,40,49,0.55), rgba(34,40,49,0.55)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  color: #fff;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+.hero-elexia h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.hero-elexia p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.hero-elexia .hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.hero-elexia .btn-primary {
+  background: var(--elexia-primary);
+  border: none;
+  border-radius: 24px;
+  font-weight: bold;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+.hero-elexia .btn-primary:hover {
+  background: var(--elexia-btn-hover);
+}
+.hero-elexia .btn-secondary {
+  background: var(--elexia-btn-secondary);
+  color: #222;
+  border: none;
+  border-radius: 24px;
+  font-weight: bold;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+.hero-elexia .btn-secondary:hover {
+  background: #bdbdbd;
+}
+
+/* Beneficios */
+.beneficios-elexia {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: -60px;
+  z-index: 2;
+  position: relative;
+}
+.beneficio-card {
+  background: var(--elexia-card);
+  box-shadow: var(--elexia-card-shadow);
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.beneficio-card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.beneficio-card p {
+  font-size: 1rem;
+  color: #444;
+}
+.beneficio-card .icon {
+  font-size: 2.2rem;
+  color: var(--elexia-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Logos clientes */
+.clientes-elexia {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem 0 1.5rem 0;
+  flex-wrap: wrap;
+}
+.clientes-elexia img {
+  height: 38px;
+  filter: grayscale(0.5) brightness(0.95);
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer-elexia {
+  background: var(--elexia-footer);
+  color: var(--elexia-footer-text);
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  font-size: 0.98rem;
+  margin-top: 3rem;
+}
+
+/* Chatbot flotante */
+.chatbot-elexia {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 9999;
+  width: 340px;
+  max-width: 90vw;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(34,40,49,0.18);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.chatbot-elexia-header {
+  background: var(--elexia-primary);
+  color: #fff;
+  padding: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.chatbot-elexia-body {
+  padding: 1rem;
+  font-size: 1rem;
+}
+.chatbot-elexia-input {
+  border-top: 1px solid #eee;
+  padding: 0.7rem 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+.chatbot-elexia-input input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+.chatbot-elexia-input button {
+  background: var(--elexia-primary);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.chatbot-elexia-input button:hover {
+  background: var(--elexia-btn-hover);
+}
+
+@media (max-width: 900px) {
+  .beneficios-elexia {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-elexia {
+    min-height: 340px;
+    padding: 2rem 0;
+  }
 }
