@@ -3,7 +3,11 @@ import React from 'react';
 export default function Nosotros() {
   return (
     <>
-      <section className="hero-elexia" style={{minHeight:320}}>
+      <section className="hero-elexia" style={{
+        minHeight:320,
+        width:'100%',
+        background: 'linear-gradient(135deg, rgba(34,40,49,0.85) 0%, rgba(224,224,224,0.85) 100%)',
+      }}>
         <h1>Sobre Elexia</h1>
         <p>Expertos en inteligencia artificial y automatización para restaurantes. +15 años de experiencia.</p>
         <div className="hero-btns">

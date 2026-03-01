@@ -45,7 +45,7 @@ export default function CasosExito() {
     <>
       {/* Hero visual alineado */}
       <section style={{
-        background: `linear-gradient(rgba(34,40,49,0.65),rgba(34,40,49,0.65)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat`,
+        background: 'linear-gradient(135deg, rgba(34,40,49,0.85) 0%, rgba(224,224,224,0.85) 100%)',
         color: '#fff',
         padding: '60px 0 40px 0',
         textAlign: 'center',

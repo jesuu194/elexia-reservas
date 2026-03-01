@@ -19,7 +19,7 @@ export default function ChatbotElexia() {
   if (!open) {
     return (
       <button className="chatbot-elexia" style={{width:60,height:60,padding:0,justifyContent:'center',alignItems:'center',display:'flex'}} onClick={()=>setOpen(true)} title="Abrir chat">
-        <img src="/logo192.png" alt="Chatbot Elexia" style={{width:38}} />
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Chatbot Elexia" style={{width:38}} />
       </button>
     );
   }
@@ -27,7 +27,7 @@ export default function ChatbotElexia() {
   return (
     <div className="chatbot-elexia">
       <div className="chatbot-elexia-header">
-        <img src="/logo192.png" alt="Elexia" style={{height:28,marginRight:8}} />
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Elexia" style={{height:28,marginRight:8}} />
         Elexia | Chatbot de IA
         <button onClick={()=>setOpen(false)} style={{marginLeft:'auto',background:'none',border:'none',color:'#fff',fontSize:'1.2rem',cursor:'pointer'}} title="Cerrar">×</button>
       </div>

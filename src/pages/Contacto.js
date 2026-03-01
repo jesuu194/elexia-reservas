@@ -21,7 +21,11 @@ export default function Contacto() {
 
   return (
     <>
-      <section className="hero-elexia" style={{minHeight:320}}>
+      <section className="hero-elexia" style={{
+        minHeight:320,
+        width:'100%',
+        background: 'linear-gradient(135deg, rgba(34,40,49,0.85) 0%, rgba(224,224,224,0.85) 100%)',
+      }}>
         <h1>Contacto</h1>
         <p>¿Tienes dudas o quieres una demo personalizada? Escríbenos y nuestro equipo te contactará en breve.</p>
       </section>

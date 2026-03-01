@@ -11,8 +11,7 @@ export default function Home() {
           paddingBottom:40,
           minHeight:420,
           width:'100%',
-          background: `linear-gradient(rgba(34,40,49,0.78),rgba(34,40,49,0.78)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat`,
-          backgroundBlendMode: 'overlay',
+          background: 'linear-gradient(135deg, rgba(34,40,49,0.85) 0%, rgba(224,224,224,0.85) 100%)',
         }}
       >
         <h1 style={{fontSize:'2.7rem',fontWeight:800,letterSpacing:'-1px',lineHeight:1.1}}>Agencia de Asistentes<br /><span style={{color:'#3bb78f'}}>para Reservas de Negocios</span></h1>
@@ -65,9 +64,18 @@ export default function Home() {
       </section>
       {/* Animación IA y sección extra */}
       <div className="container text-center mb-5">
-        <img src="https://pixabay.com/es/images/download/mentagi-robot-6654025_1920.png" alt="Animación IA" style={{maxWidth:320, width:'100%', borderRadius:18, boxShadow:'0 4px 24px 0 rgba(34,40,49,0.08)'}} />
-        <div style={{fontSize:'1.1rem',color:'#3bb78f',marginTop:8}}>
-          <b>IA que aprende y evoluciona con tu restaurante</b>
+        <div style={{
+          fontSize:'2rem',
+          color:'#222',
+          marginTop:16,
+          fontWeight:'bold',
+          background:'rgba(255,255,255,0.85)',
+          borderRadius:12,
+          padding:'16px 32px',
+          display:'inline-block',
+          boxShadow:'0 2px 8px 0 rgba(34,40,49,0.08)'
+        }}>
+          IA que aprende y evoluciona con tu negocio de reservas
         </div>
       </div>
 
