@@ -78,7 +78,7 @@ export default function ProductFormPage() {
   };
 
   return (
-    <section className="card shadow-sm border-0">
+    <section className="card shadow-sm border-0 app-panel">
       <div className="card-body">
         <h2 className="h4">{isEdit ? 'Editar producto' : 'Nuevo producto'}</h2>
         {error && <div className="alert alert-danger">{error}</div>}

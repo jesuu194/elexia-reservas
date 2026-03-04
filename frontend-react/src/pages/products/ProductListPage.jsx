@@ -39,7 +39,7 @@ export default function ProductListPage() {
   };
 
   return (
-    <section className="card shadow-sm border-0">
+    <section className="card shadow-sm border-0 app-panel">
       <div className="card-body">
         <div className="d-flex justify-content-between align-items-center mb-3">
           <h2 className="h4 mb-0">Productos</h2>

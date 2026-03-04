@@ -23,7 +23,7 @@ export default function ReservaDetailPage() {
   if (!reserva) return <div className="alert alert-info">Cargando...</div>;
 
   return (
-    <section className="card shadow-sm border-0">
+    <section className="card shadow-sm border-0 app-panel">
       <div className="card-body">
         <h2 className="h4">Reserva de {reserva.cliente}</h2>
         <ul className="list-group mb-3">

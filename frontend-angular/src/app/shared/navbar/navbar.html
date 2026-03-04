@@ -1,16 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+<nav class="navbar navbar-expand-lg app-navbar shadow-sm">
 	<div class="container">
-		<a class="navbar-brand fw-bold" routerLink="/">AgenciaAI</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+		<a class="navbar-brand app-brand" routerLink="/">
+			<span class="app-brand__dot"></span>
+			Elexia Reservas IA
+		</a>
+
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-bs-toggle="collapse"
+			data-bs-target="#mainNavbar"
+			aria-controls="mainNavbar"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
 			<span class="navbar-toggler-icon"></span>
 		</button>
+
 		<div class="collapse navbar-collapse" id="mainNavbar">
-			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link" routerLink="/">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link" routerLink="/productos">Productos</a></li>
-				<li class="nav-item"><a class="nav-link" routerLink="/reservas">Reservas</a></li>
-				<li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-				<li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/productos" routerLinkActive="active-link">Productos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/reservas" routerLinkActive="active-link">Reservas</a>
+				</li>
+				<li class="nav-item ms-lg-2">
+					<a class="btn btn-sm btn-light fw-semibold" routerLink="/reservas/nueva">Nueva reserva</a>
+				</li>
 			</ul>
 		</div>
 	</div>

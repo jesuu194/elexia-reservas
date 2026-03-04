@@ -1,60 +1,98 @@
-// Estilos para la landing de la agencia
-.landing {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	min-height: 60vh;
-	text-align: center;
+.home-hero {
+	position: relative;
+	overflow: hidden;
+	border-radius: 1.4rem;
+	padding: clamp(1.5rem, 3vw, 3rem);
+	background: linear-gradient(130deg, #09384a 0%, #0d536b 52%, #1b728d 100%);
+	color: #edf7fa;
+	box-shadow: 0 18px 48px rgba(9, 56, 74, 0.28);
 }
 
-.hero h1 {
-	font-size: 2.5rem;
-	font-weight: bold;
-	margin-bottom: 1rem;
+.home-hero h1 {
+	max-width: 17ch;
+	font-size: clamp(1.9rem, 4vw, 3rem);
+	line-height: 1.08;
+	margin: 0.9rem 0;
 }
 
-.hero p {
-	font-size: 1.2rem;
-	margin-bottom: 1.5rem;
+.home-hero p {
+	max-width: 58ch;
+	margin-bottom: 0;
+	color: rgba(237, 247, 250, 0.9);
 }
 
-.cta {
-	display: inline-block;
-	padding: 0.75rem 2rem;
-	background: #0d6efd;
-	color: #fff;
-	border-radius: 2rem;
-	text-decoration: none;
-	font-weight: 500;
-	margin-bottom: 2rem;
-	transition: background 0.2s;
-}
-.cta:hover {
-	background: #084298;
+.home-hero__badge {
+	display: inline-flex;
+	padding: 0.35rem 0.75rem;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.14);
+	border: 1px solid rgba(255, 255, 255, 0.22);
+	font-weight: 700;
+	font-size: 0.76rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
 }
 
-.features {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 2rem;
-	justify-content: center;
-	margin-top: 2rem;
+.home-hero .btn-outline-light {
+	border-width: 2px;
 }
-.feature {
-	background: #fff;
+
+.metric-card,
+.feature-tile {
 	border-radius: 1rem;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-	padding: 2rem 1.5rem;
-	min-width: 220px;
-	max-width: 320px;
+	background: rgba(255, 255, 255, 0.88);
+	border: 1px solid rgba(9, 56, 74, 0.08);
+	box-shadow: 0 10px 26px rgba(10, 44, 57, 0.08);
 }
-.feature h2 {
-	font-size: 1.3rem;
-	font-weight: 600;
-	margin-bottom: 0.5rem;
+
+.metric-card {
+	height: 100%;
+	padding: 1.1rem 1.15rem;
 }
-.feature p {
-	font-size: 1rem;
-	color: #444;
+
+.metric-card__title {
+	margin-bottom: 0.4rem;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	color: #4f6670;
+}
+
+.metric-card__value {
+	margin: 0;
+	font-family: 'Sora', sans-serif;
+	font-size: 2rem;
+	font-weight: 700;
+	color: #0a4c61;
+}
+
+.metric-card__text {
+	margin: 0.5rem 0 0;
+	color: #4a616b;
+}
+
+.feature-grid {
+	display: grid;
+	gap: 0.9rem;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.feature-tile {
+	padding: 1.15rem;
+}
+
+.feature-tile h2 {
+	margin-bottom: 0.45rem;
+	font-size: 1.1rem;
+}
+
+.feature-tile p {
+	margin: 0;
+	color: #4a616b;
+}
+
+@media (max-width: 767.98px) {
+	.home-hero {
+		padding: 1.25rem;
+	}
 }

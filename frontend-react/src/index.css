@@ -1,8 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap');
+
+:root {
+  --react-bg: #f2f7f8;
+  --react-text: #17323d;
+  --react-primary: #0d536b;
+  --react-primary-strong: #09384a;
+}
+
 body {
   margin: 0;
-  background: #f2f5f9;
+  color: var(--react-text);
+  font-family: 'Manrope', sans-serif;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(13, 83, 107, 0.12), rgba(13, 83, 107, 0) 36%),
+    radial-gradient(circle at 88% 100%, rgba(255, 154, 60, 0.12), rgba(255, 154, 60, 0) 32%),
+    var(--react-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: 'Sora', sans-serif;
 }
 
 #root {
   min-height: 100vh;
+}
+
+.container {
+  max-width: 1080px;
+}
+
+.app-navbar-react {
+  background: linear-gradient(120deg, #083a4a 0%, #0f4f63 55%, #166981 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.app-brand-react {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #f8fbff;
+}
+
+.app-brand-react__dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #ff9a3c;
+  box-shadow: 0 0 0 6px rgba(255, 154, 60, 0.16);
+}
+
+.app-navbar-react .nav-link {
+  color: rgba(245, 252, 255, 0.88);
+  font-weight: 600;
+}
+
+.app-navbar-react .nav-link.active {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.35rem;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #ffbc77;
+}
+
+.hero-react {
+  border-radius: 1.4rem;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  color: #edf7fa;
+  background: linear-gradient(130deg, #09384a 0%, #0d536b 52%, #1b728d 100%);
+  box-shadow: 0 18px 48px rgba(9, 56, 74, 0.28);
+}
+
+.hero-react__badge {
+  display: inline-flex;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.app-panel,
+.table {
+  border-radius: 1rem;
+  border-color: rgba(9, 56, 74, 0.11);
+  box-shadow: 0 10px 24px rgba(10, 44, 57, 0.07);
+  overflow: hidden;
+}
+
+.btn {
+  border-radius: 0.7rem;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background-color: var(--react-primary);
+  border-color: var(--react-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--react-primary-strong);
+  border-color: var(--react-primary-strong);
+}
+
+.btn-success {
+  background-color: #0f8f74;
+  border-color: #0f8f74;
+}
+
+.btn-warning {
+  background-color: #f4a340;
+  border-color: #f4a340;
+  color: #1a1a1a;
+}
+
+.btn-info {
+  background-color: #3a90c2;
+  border-color: #3a90c2;
+  color: #fff;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.65rem;
+  border-color: rgba(9, 56, 74, 0.16);
+}
+
+.app-footer-react {
+  background: #082430;
+  color: #d8e8ee;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 767.98px) {
+  .hero-react {
+    padding: 1.25rem;
+  }
 }

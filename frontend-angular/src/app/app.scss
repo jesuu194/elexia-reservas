@@ -1,0 +1,35 @@
+.app-shell {
+	position: relative;
+	isolation: isolate;
+}
+
+.app-shell::before,
+.app-shell::after {
+	content: '';
+	position: fixed;
+	inset: auto;
+	z-index: -1;
+	pointer-events: none;
+}
+
+.app-shell::before {
+	width: 26rem;
+	height: 26rem;
+	top: -8rem;
+	right: -8rem;
+	border-radius: 50%;
+	background: radial-gradient(circle at center, rgba(24, 170, 154, 0.28), rgba(24, 170, 154, 0));
+}
+
+.app-shell::after {
+	width: 20rem;
+	height: 20rem;
+	bottom: 0;
+	left: -6rem;
+	border-radius: 50%;
+	background: radial-gradient(circle at center, rgba(255, 152, 66, 0.24), rgba(255, 152, 66, 0));
+}
+
+.app-shell__main {
+	position: relative;
+}

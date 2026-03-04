@@ -1,0 +1,38 @@
+.app-navbar {
+	background: linear-gradient(120deg, #083a4a 0%, #0f4f63 55%, #166981 100%);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.app-brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	color: #f8fbff;
+	font-weight: 800;
+	letter-spacing: 0.01em;
+}
+
+.app-brand__dot {
+	width: 0.7rem;
+	height: 0.7rem;
+	border-radius: 50%;
+	background: #ff9a3c;
+	box-shadow: 0 0 0 6px rgba(255, 154, 60, 0.16);
+}
+
+.app-navbar .nav-link {
+	color: rgba(245, 252, 255, 0.88);
+	font-weight: 600;
+}
+
+.app-navbar .nav-link:hover {
+	color: #ffffff;
+}
+
+.active-link {
+	color: #ffffff !important;
+	text-decoration: underline;
+	text-underline-offset: 0.35rem;
+	text-decoration-color: #ffbc77;
+	text-decoration-thickness: 2px;
+}
