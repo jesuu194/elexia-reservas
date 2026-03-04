@@ -91,6 +91,69 @@
 	color: #4a616b;
 }
 
+.industries,
+.workflow {
+	background: rgba(255, 255, 255, 0.82);
+	border: 1px solid rgba(9, 56, 74, 0.08);
+	border-radius: 1rem;
+	padding: 1.15rem;
+	box-shadow: 0 10px 26px rgba(10, 44, 57, 0.08);
+}
+
+.industries h2,
+.workflow h2 {
+	font-size: 1.25rem;
+}
+
+.pill {
+	display: inline-flex;
+	border-radius: 999px;
+	background: #eaf4f7;
+	color: #0a4c61;
+	padding: 0.3rem 0.7rem;
+	font-weight: 700;
+	font-size: 0.8rem;
+}
+
+.industries-grid,
+.workflow-grid {
+	display: grid;
+	gap: 0.75rem;
+	grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.industry-card,
+.workflow-step {
+	border-radius: 0.8rem;
+	border: 1px solid rgba(9, 56, 74, 0.09);
+	background: #fff;
+	padding: 0.9rem;
+}
+
+.industry-card h3,
+.workflow-step h3 {
+	margin: 0 0 0.35rem;
+	font-size: 1rem;
+}
+
+.industry-card p,
+.workflow-step p {
+	margin: 0;
+	color: #4a616b;
+}
+
+.workflow-step span {
+	width: 1.7rem;
+	height: 1.7rem;
+	display: inline-grid;
+	place-items: center;
+	border-radius: 50%;
+	background: #0d536b;
+	color: #fff;
+	font-weight: 700;
+	margin-bottom: 0.45rem;
+}
+
 @media (max-width: 767.98px) {
 	.home-hero {
 		padding: 1.25rem;

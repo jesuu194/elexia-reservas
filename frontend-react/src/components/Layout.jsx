@@ -1,4 +1,5 @@
 import { Link, NavLink, Outlet } from 'react-router-dom';
+import ChatbotWidget from './ChatbotWidget';
 
 export default function Layout() {
   return (
@@ -35,6 +36,8 @@ export default function Layout() {
           <span>React + Router + Bootstrap + API Node</span>
         </div>
       </footer>
+
+      <ChatbotWidget />
     </div>
   );
 }
