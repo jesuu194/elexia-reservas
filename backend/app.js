@@ -7,11 +7,23 @@ const reservaRoutes = require('./src/routes/reserva.routes');
 const errorHandler = require('./src/middlewares/error.middleware');
 
 const app = express();
-connectDB();
+
+connectDB().catch((err) => {
+	console.error('Initial DB connection failed', err.message);
+});
 
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
+
+app.use(async (_req, _res, next) => {
+	try {
+		await connectDB();
+		next();
+	} catch (err) {
+		next(err);
+	}
+});
 
 // Documentación interactiva Swagger
 
@@ -47,7 +59,7 @@ app.get('/api/v1', (_req, res) => {
 });
 
 app.get('/api/v1/health', (_req, res) => {
-	res.json({ ok: true });
+	res.json({ ok: true, dbReadyState: require('mongoose').connection.readyState });
 });
 
 // Rutas de productos
