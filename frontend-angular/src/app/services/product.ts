@@ -17,7 +17,7 @@ export class ProductService {
   private readonly apiBase =
     typeof window !== 'undefined' && window.location.hostname === 'localhost'
       ? 'http://localhost:3000'
-      : 'https://api.elexiareservas.com';
+      : 'https://backend-mu-mauve-33.vercel.app';
   private apiUrl = `${this.apiBase}/api/v1/products`;
 
   constructor(private http: HttpClient) {}
