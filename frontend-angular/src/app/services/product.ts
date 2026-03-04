@@ -14,7 +14,11 @@ export interface ProductModel {
   providedIn: 'root',
 })
 export class ProductService {
-  private apiUrl = 'http://localhost:3000/api/v1/products';
+  private readonly apiBase =
+    typeof window !== 'undefined' && window.location.hostname === 'localhost'
+      ? 'http://localhost:3000'
+      : 'https://api.elexiareservas.com';
+  private apiUrl = `${this.apiBase}/api/v1/products`;
 
   constructor(private http: HttpClient) {}
 
