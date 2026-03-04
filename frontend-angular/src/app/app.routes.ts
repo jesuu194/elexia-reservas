@@ -21,5 +21,21 @@ export const routes: Routes = [
 	{
 		path: 'productos/:id',
 		loadComponent: () => import('./pages/products/detail/detail').then(m => m.Detail)
+	},
+	{
+		path: 'reservas',
+		loadComponent: () => import('./pages/reservas/list/list').then(m => m.List)
+	},
+	{
+		path: 'reservas/nueva',
+		loadComponent: () => import('./pages/reservas/form/form').then(m => m.Form)
+	},
+	{
+		path: 'reservas/:id/editar',
+		loadComponent: () => import('./pages/reservas/form/form').then(m => m.Form)
+	},
+	{
+		path: 'reservas/:id',
+		loadComponent: () => import('./pages/reservas/detail/detail').then(m => m.Detail)
 	}
 ];
