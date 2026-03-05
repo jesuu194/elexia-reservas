@@ -7,13 +7,19 @@
 	<article *ngIf="product()" class="detail-card">
 		<header class="detail-card__header">
 			<div>
-				<p class="mb-1 text-secondary">Detalle de producto</p>
+				<p class="mb-1 text-secondary">Ficha comercial</p>
 				<h3 class="mb-0">{{ product()?.nombre }}</h3>
 			</div>
 			<span class="status">{{ (product()?.disponible ?? true) ? 'Disponible' : 'No disponible' }}</span>
 		</header>
 
-		<p class="detail-card__description">{{ product()?.descripcion }}</p>
+		<p class="detail-card__description">{{ salesPitch(product()) }}</p>
+
+		<div class="impact-strip">
+			<span>Implementacion guiada</span>
+			<span>Activacion rapida</span>
+			<span>Soporte para conversion</span>
+		</div>
 
 		<div class="detail-grid">
 			<article>
@@ -30,8 +36,11 @@
 			</article>
 		</div>
 
+		<p class="urgency">{{ urgencyText(product()?.stock || 0) }}</p>
+
 		<div class="actions mt-3">
 			<a class="btn btn-secondary" routerLink="/productos">Volver</a>
+			<a class="btn btn-info" routerLink="/reservas/nueva">Quiero este servicio</a>
 			<a class="btn btn-warning" [routerLink]="['/productos', product()?._id, 'editar']">Editar</a>
 		</div>
 	</article>

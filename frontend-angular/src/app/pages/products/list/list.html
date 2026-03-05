@@ -1,12 +1,27 @@
 <section class="products-page">
 	<header class="products-page__header">
 		<div>
-			<p class="products-page__eyebrow">Catalogo de servicios</p>
-			<h2 class="mb-1">Productos</h2>
-			<p class="text-secondary mb-0">Gestiona precios, stock y disponibilidad de tus servicios IA.</p>
+			<p class="products-page__eyebrow">Catalogo comercial IA</p>
+			<h2 class="mb-1">Productos que convierten visitas en reservas</h2>
+			<p class="text-secondary mb-0">Presenta tus soluciones con una propuesta clara de valor para impulsar compras.</p>
 		</div>
 		<a class="btn btn-success" routerLink="/productos/nuevo">Nuevo producto</a>
 	</header>
+
+	<section class="products-page__kpis">
+		<article>
+			<strong>{{ total() }}</strong>
+			<span>Soluciones activas</span>
+		</article>
+		<article>
+			<strong>+35%</strong>
+			<span>Mejora media de conversion</span>
+		</article>
+		<article>
+			<strong>24/7</strong>
+			<span>Atencion automatizada</span>
+		</article>
+	</section>
 
 	<article class="products-page__panel">
 		<div class="products-page__meta">
@@ -25,37 +40,32 @@
 			<p>Crea el primer servicio para empezar a registrar reservas.</p>
 		</div>
 
-		<div class="table-responsive" *ngIf="!loading() && products().length">
-			<table class="table table-hover align-middle mb-0">
-				<thead>
-					<tr>
-						<th>Nombre</th>
-						<th>Descripcion</th>
-						<th>Precio</th>
-						<th>Stock</th>
-						<th>Estado</th>
-						<th>Acciones</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr *ngFor="let p of products()">
-						<td class="fw-semibold">{{ p.nombre }}</td>
-						<td class="text-secondary">{{ p.descripcion }}</td>
-						<td>{{ p.precio | currency:'USD' }}</td>
-						<td>{{ p.stock }}</td>
-						<td>
-							<span class="status" [ngClass]="(p.disponible ?? true) ? 'status--ok' : 'status--off'">
-								{{ (p.disponible ?? true) ? 'Disponible' : 'No disponible' }}
-							</span>
-						</td>
-						<td class="actions">
-							<a class="btn btn-sm btn-info" [routerLink]="['/productos', p._id || '']">Ver</a>
-							<a class="btn btn-sm btn-warning" [routerLink]="['/productos', p._id || '', 'editar']">Editar</a>
-							<button class="btn btn-sm btn-danger" (click)="deleteProduct(p._id || '')">Eliminar</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+		<div class="products-grid" *ngIf="!loading() && products().length">
+			<article class="product-card" *ngFor="let p of products()">
+				<header class="product-card__top">
+					<div>
+						<h3>{{ p.nombre }}</h3>
+						<p>{{ marketingDescription(p) }}</p>
+					</div>
+					<span class="price">{{ p.precio | currency:'USD' }}</span>
+				</header>
+
+				<div class="product-card__tags">
+					<span class="status" [ngClass]="(p.disponible ?? true) ? 'status--ok' : 'status--off'">
+						{{ (p.disponible ?? true) ? 'Disponible' : 'No disponible' }}
+					</span>
+					<span class="tag">{{ demandLabel(p.stock) }}</span>
+					<span class="tag">Stock: {{ p.stock }}</span>
+				</div>
+
+				<p class="product-card__benefit">{{ marketingBenefit(p) }}</p>
+
+				<div class="actions">
+					<a class="btn btn-info" [routerLink]="['/productos', p._id || '']">Ver oferta</a>
+					<a class="btn btn-warning" [routerLink]="['/productos', p._id || '', 'editar']">Editar</a>
+					<button class="btn btn-danger" (click)="deleteProduct(p._id || '')">Eliminar</button>
+				</div>
+			</article>
 		</div>
 	</article>
 

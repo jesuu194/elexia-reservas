@@ -21,9 +21,22 @@ const buildProducts = () => {
     'Suite Conversacional Negocios'
   ];
 
+  const salesDescriptions = [
+    'Responde llamadas y confirma reservas 24/7 para no perder clientes fuera de horario.',
+    'Gestiona reservas de alto valor con voz IA, guiones de cierre y derivacion inteligente.',
+    'Resuelve preguntas frecuentes en segundos y acelera la decision de compra.',
+    'Conversaciones comerciales optimizadas para convertir consultas en reservas reales.',
+    'Reservas por WhatsApp con respuestas instantaneas y menos carga operativa.',
+    'Recordatorios automaticos para reducir ausencias y proteger ingresos diarios.',
+    'Sincronizacion de calendario en tiempo real para evitar conflictos y huecos vacios.',
+    'Mide conversion, demanda y rendimiento por canal con panel accionable.',
+    'Atencion centralizada en web, telefono y mensajeria con experiencia coherente.',
+    'Suite integral para escalar captacion, cierre y fidelizacion de reservas con IA.'
+  ];
+
   return baseNames.map((nombre, index) => ({
     nombre,
-    descripcion: `Servicio IA orientado a reservas (${index + 1}).`,
+    descripcion: salesDescriptions[index],
     precio: 99 + index * 40,
     stock: 30 + index * 5,
     fechaPublicacion: addDays(new Date('2026-01-01'), index),
