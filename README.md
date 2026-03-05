@@ -1,6 +1,6 @@
 # Proyecto Final Integrador - Elexia Reservas IA
 
-Este proyecto lo hice para automatizar reservas con IA para distintos negocios (restaurantes, clinicas, gimnasios, centros de belleza, academias y consultorias).
+Este proyecto lo hice para automatizar reservas con agentes de voz y chat para distintos negocios (restaurantes, clinicas, gimnasios, centros de belleza, academias y consultorias).
 
 La idea principal es tener una API unica y dos frontends completos (Angular y React) consumiendo la misma logica de negocio.
 
