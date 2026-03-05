@@ -1,22 +1,43 @@
-<div class="container mt-4">
+<section class="detail-page">
 	<div *ngIf="loading()" class="text-center my-4">
-		<div class="spinner-border" role="status">
-			<span class="visually-hidden">Cargando...</span>
-		</div>
+		<div class="spinner-border" role="status"><span class="visually-hidden">Cargando...</span></div>
 	</div>
 	<div *ngIf="error()" class="alert alert-danger">{{ error() }}</div>
-	<div *ngIf="reserva()" class="card">
-		<div class="card-body">
-			<h3 class="card-title">Reserva de {{ reserva()?.cliente }}</h3>
-			<h6 class="card-subtitle mb-2 text-muted">ID: {{ reserva()?._id }}</h6>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item"><b>Producto:</b> {{ reserva()?.producto }}</li>
-				<li class="list-group-item"><b>Fecha:</b> {{ reserva()?.fecha | date:'shortDate' }}</li>
-				<li class="list-group-item"><b>Cantidad:</b> {{ reserva()?.cantidad }}</li>
-				<li class="list-group-item"><b>Estado:</b> {{ reserva()?.estado }}</li>
-			</ul>
-			<a class="btn btn-secondary mt-3" routerLink="/reservas">Volver</a>
-			<a class="btn btn-warning mt-3 ms-2" [routerLink]="['/reservas', reserva()?._id, 'editar']">Editar</a>
+
+	<article *ngIf="reserva()" class="detail-card">
+		<header class="detail-card__header">
+			<div>
+				<p class="mb-1 text-secondary">Detalle de reserva</p>
+				<h3 class="mb-0">Reserva de {{ reserva()?.cliente }}</h3>
+			</div>
+			<span class="status"
+				[ngClass]="reserva()?.estado === 'confirmada' ? 'status--ok' : (reserva()?.estado === 'cancelada' ? 'status--off' : 'status--pending')">
+				{{ reserva()?.estado }}
+			</span>
+		</header>
+
+		<div class="detail-grid">
+			<article>
+				<span>Producto</span>
+				<strong>{{ reserva()?.producto }}</strong>
+			</article>
+			<article>
+				<span>Fecha</span>
+				<strong>{{ reserva()?.fecha | date:'shortDate' }}</strong>
+			</article>
+			<article>
+				<span>Cantidad</span>
+				<strong>{{ reserva()?.cantidad }}</strong>
+			</article>
+			<article>
+				<span>ID</span>
+				<strong class="id">{{ reserva()?._id }}</strong>
+			</article>
 		</div>
-	</div>
-</div>
+
+		<div class="actions mt-3">
+			<a class="btn btn-secondary" routerLink="/reservas">Volver</a>
+			<a class="btn btn-warning" [routerLink]="['/reservas', reserva()?._id, 'editar']">Editar</a>
+		</div>
+	</article>
+</section>

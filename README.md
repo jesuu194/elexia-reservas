@@ -1,6 +1,8 @@
 # Proyecto Final Integrador - Elexia Reservas IA
 
-Aplicacion full-stack para automatizar reservas con IA para distintos negocios (restaurantes, clinicas, gimnasios, centros de belleza, academias y consultorias), con API unica y dos clientes frontend completos.
+Este proyecto lo hice para automatizar reservas con IA para distintos negocios (restaurantes, clinicas, gimnasios, centros de belleza, academias y consultorias).
+
+La idea principal es tener una API unica y dos frontends completos (Angular y React) consumiendo la misma logica de negocio.
 
 ## Stack tecnologico
 - Backend: `Node.js`, `Express`, `MongoDB Atlas`, `Mongoose`
@@ -14,13 +16,13 @@ Aplicacion full-stack para automatizar reservas con IA para distintos negocios (
 - React: `https://frontend-react-ebon.vercel.app`
 
 ## Problema que resuelve
-Los negocios que ofrecen atencion digital necesitan controlar su catalogo de servicios y gestionar reservas de forma centralizada. Elexia Reservas IA permite:
+Muchos negocios siguen gestionando reservas por WhatsApp o llamadas sin control centralizado. Con este sistema se puede:
 - Gestionar productos/servicios con stock y disponibilidad.
-- Registrar y filtrar reservas por estado.
-- Aplicar reglas de negocio reales para evitar errores operativos.
-- Operar con dos frontends distintos sobre una misma API.
+- Registrar, buscar y filtrar reservas por estado.
+- Aplicar reglas de negocio para evitar errores.
+- Trabajar con dos frontends distintos sobre la misma API.
 
-## Arquitectura
+## Como esta montado
 ```mermaid
 flowchart LR
 	A[Frontend Angular] --> C[API Express Node]
@@ -31,7 +33,7 @@ flowchart LR
 	C --> G[Middlewares de errores]
 ```
 
-## Flujo principal de reserva
+## Flujo principal (crear una reserva)
 ```mermaid
 sequenceDiagram
 	participant U as Usuario
@@ -39,9 +41,9 @@ sequenceDiagram
 	participant API as API Express
 	participant DB as MongoDB Atlas
 
-	U->>FE: Completa formulario de reserva
+	U->>FE: Rellena formulario de reserva
 	FE->>API: POST /api/v1/reserva/post
-	API->>API: Valida reglas de negocio
+	API->>API: Aplica validaciones y reglas
 	API->>DB: Comprueba producto y stock
 	DB-->>API: Datos del producto
 	API->>DB: Guarda reserva y actualiza stock
@@ -81,7 +83,7 @@ sequenceDiagram
 - No se puede reservar mas cantidad que el stock disponible.
 - No se permiten reservas duplicadas del mismo cliente, producto y fecha.
 
-## API REST (documentada)
+## API REST
 ### Utilidades
 - `GET /api/v1`
 - `GET /api/v1/health`
@@ -127,7 +129,7 @@ npm --prefix frontend-react run start -- --port 5173
 ```
 URL: `http://localhost:5173`
 
-## Cumplimiento de rubricas
+## Checklist segun la rubrica
 - Backend por capas (`config`, `models`, `controllers`, `routes`, `middlewares`).
 - CRUD completo en productos y reservas.
 - Paginacion + filtros.
@@ -137,7 +139,7 @@ URL: `http://localhost:5173`
 - React con componentes, hooks, consumo API, validaciones, router y estado bien organizado.
 - Deploy estable de API + Angular + React en Vercel.
 
-## Demo rapida para defensa
+## Guion rapido para la defensa
 1. Abrir Angular y React en produccion.
 2. Listar productos y reservas en ambos frontends.
 3. Crear, editar y borrar un producto.

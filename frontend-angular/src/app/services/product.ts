@@ -8,6 +8,8 @@ export interface ProductModel {
   descripcion: string;
   precio: number;
   stock: number;
+  disponible?: boolean;
+  fechaPublicacion?: string;
 }
 
 @Injectable({

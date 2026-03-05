@@ -1,0 +1,21 @@
+.eyebrow {
+	margin: 0;
+	font-size: 0.78rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #5c7482;
+	font-weight: 700;
+}
+
+.form-card {
+	background: rgba(255, 255, 255, 0.9);
+	border: 1px solid rgba(9, 56, 74, 0.1);
+	border-radius: 1rem;
+	padding: 1rem;
+}
+
+.actions {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
