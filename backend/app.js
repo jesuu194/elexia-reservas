@@ -19,11 +19,10 @@ app.use(morgan('dev'));
 app.use(async (_req, _res, next) => {
 	try {
 		await connectDB();
+		next();
 	} catch (err) {
-		console.warn('DB not ready, serving fallback mode:', err.message);
+		next(err);
 	}
-
-	next();
 });
 
 // Documentación interactiva Swagger

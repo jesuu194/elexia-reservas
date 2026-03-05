@@ -2,9 +2,6 @@
 const Reserva = require('../models/Reserva');
 const Product = require('../models/Product');
 const mongoose = require('mongoose');
-const fallbackStore = require('../config/fallbackStore');
-
-const useFallback = () => mongoose.connection.readyState !== 1;
 
 const serializeReserva = (reserva) => {
   const value = reserva?.toObject ? reserva.toObject() : reserva;
@@ -40,10 +37,6 @@ exports.getAllReservas = async (req, res, next) => {
     const skip = (page - 1) * limit;
     const estado = req.query.estado;
 
-    if (useFallback()) {
-      return res.json(fallbackStore.listReservas(page, limit, estado));
-    }
-
     const filter = estado ? { estado } : {};
     const reservas = await Reserva.find(filter).populate('producto').skip(skip).limit(limit);
     const total = await Reserva.countDocuments(filter);
@@ -54,12 +47,6 @@ exports.getAllReservas = async (req, res, next) => {
 // Obtener una reserva por ID
 exports.getReservaById = async (req, res, next) => {
   try {
-    if (useFallback()) {
-      const reservaFallback = fallbackStore.findReservaById(req.params.id);
-      if (!reservaFallback) return res.status(404).json({ message: 'Reserva no encontrada' });
-      return res.json(reservaFallback);
-    }
-
     const reserva = await Reserva.findById(req.params.id).populate('producto');
     if (!reserva) return res.status(404).json({ message: 'Reserva no encontrada' });
     res.json(serializeReserva(reserva));
@@ -73,19 +60,6 @@ exports.createReserva = async (req, res, next) => {
     const { fecha, producto, cantidad, descripcion, asistidaPorIA } = req.body;
     if (!nombreCliente || !fecha || !producto || !cantidad) {
       return res.status(400).json({ message: 'Faltan datos obligatorios' });
-    }
-
-    if (useFallback()) {
-      const reservaFallback = fallbackStore.createReserva({
-        nombreCliente,
-        fecha,
-        producto,
-        cantidad,
-        descripcion,
-        asistidaPorIA,
-        estado: req.body.estado
-      });
-      return res.status(201).json(reservaFallback);
     }
 
     // Regla: No permitir reservas en fechas pasadas
@@ -123,12 +97,6 @@ exports.createReserva = async (req, res, next) => {
 // Actualizar una reserva
 exports.updateReserva = async (req, res, next) => {
   try {
-    if (useFallback()) {
-      const reservaFallback = fallbackStore.updateReserva(req.params.id, req.body);
-      if (!reservaFallback) return res.status(404).json({ message: 'Reserva no encontrada' });
-      return res.json(reservaFallback);
-    }
-
     const reserva = await Reserva.findById(req.params.id);
     if (!reserva) return res.status(404).json({ message: 'Reserva no encontrada' });
     const {
@@ -166,12 +134,6 @@ exports.updateReserva = async (req, res, next) => {
 // Eliminar una reserva
 exports.deleteReserva = async (req, res, next) => {
   try {
-    if (useFallback()) {
-      const reservaFallback = fallbackStore.deleteReserva(req.params.id);
-      if (!reservaFallback) return res.status(404).json({ message: 'Reserva no encontrada' });
-      return res.json({ message: 'Reserva eliminada' });
-    }
-
     const reserva = await Reserva.findByIdAndDelete(req.params.id);
     if (!reserva) return res.status(404).json({ message: 'Reserva no encontrada' });
     res.json({ message: 'Reserva eliminada' });
