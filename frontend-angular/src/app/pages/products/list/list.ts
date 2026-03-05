@@ -79,10 +79,10 @@ export class List implements OnInit {
       'Integracion Calendario IA': 'Sincroniza cupos en tiempo real para evitar sobreventas o huecos vacios.',
       'Panel Analitico de Reservas': 'Visualiza conversion, canales top y horas pico para vender mas.',
       'Asistente Omnicanal': 'Unifica web, telefono y mensajeria para no perder ningun lead.',
-      'Suite Conversacional Negocios': 'Solucion completa para escalar ventas y reservas con IA aplicada.'
+      'Suite Conversacional Negocios': 'Solucion completa para escalar ventas y reservas de forma automatizada.'
     };
 
-    return map[product.nombre] || product.descripcion || 'Servicio IA para acelerar reservas y conversion.';
+    return this.stripIaToken(map[product.nombre] || product.descripcion || 'Servicio para acelerar reservas y conversion.');
   }
 
   marketingBenefit(product: ProductModel): string {
@@ -95,5 +95,13 @@ export class List implements OnInit {
     if (stock <= 35) return 'Alta demanda';
     if (stock <= 55) return 'Muy solicitado';
     return 'Disponible ahora';
+  }
+
+  productLabel(name = ''): string {
+    return this.stripIaToken(name);
+  }
+
+  private stripIaToken(value = ''): string {
+    return value.replace(/\bIA\b/g, '').replace(/\s{2,}/g, ' ').trim();
   }
 }

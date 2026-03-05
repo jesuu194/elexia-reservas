@@ -9,7 +9,7 @@ const QUICK_REPLIES = [
 
 const firstBotMessage = {
   role: 'bot',
-  text: 'Hola, soy Elexia Bot. Te ayudo a visualizar como automatizamos reservas con IA.'
+  text: 'Hola, soy Elexia Bot. Te ayudo a visualizar como automatizamos reservas para tu negocio.'
 };
 
 function getBotReply(userText) {

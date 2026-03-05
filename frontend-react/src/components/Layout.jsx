@@ -5,10 +5,13 @@ export default function Layout() {
   return (
     <div className="app-shell-react d-flex flex-column min-vh-100">
       <nav className="navbar navbar-expand-lg app-navbar-react shadow-sm">
-        <div className="container">
+        <div className="container app-navbar-react__inner">
           <Link className="navbar-brand app-brand-react fw-bold" to="/">
             <span className="app-brand-react__dot" />
-            Elexia Reservas IA
+            <span className="app-brand-react__text">
+              <strong>Elexia Reservas</strong>
+              <small>Plataforma comercial</small>
+            </span>
           </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
@@ -19,7 +22,7 @@ export default function Layout() {
               <li className="nav-item"><NavLink className="nav-link" to="/productos">Productos</NavLink></li>
               <li className="nav-item"><NavLink className="nav-link" to="/reservas">Reservas</NavLink></li>
               <li className="nav-item ms-lg-2">
-                <NavLink className="btn btn-sm btn-light fw-semibold" to="/reservas/nueva">Nueva reserva</NavLink>
+                <NavLink className="btn btn-sm btn-light fw-semibold app-navbar-react__cta" to="/reservas/nueva">Crear reserva</NavLink>
               </li>
             </ul>
           </div>
@@ -32,7 +35,7 @@ export default function Layout() {
 
       <footer className="app-footer-react py-3 mt-auto">
         <div className="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 small">
-          <span>2026 Elexia Reservas IA</span>
+          <span>2026 Elexia Reservas</span>
           <span>React + Router + Bootstrap + API Node</span>
         </div>
       </footer>

@@ -6,6 +6,7 @@ export default function ProductDetailPage() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [error, setError] = useState('');
+  const cleanLabel = (value = '') => String(value).replace(/\bIA\b/g, '').replace(/\s{2,}/g, ' ').trim();
 
   useEffect(() => {
     const load = async () => {
@@ -25,8 +26,8 @@ export default function ProductDetailPage() {
   return (
     <section className="card shadow-sm border-0 app-panel">
       <div className="card-body">
-        <h2 className="h4">{product.nombre}</h2>
-        <p>{product.descripcion}</p>
+        <h2 className="h4">{cleanLabel(product.nombre)}</h2>
+        <p>{cleanLabel(product.descripcion)}</p>
         <ul className="list-group mb-3">
           <li className="list-group-item"><strong>Precio:</strong> {product.precio}</li>
           <li className="list-group-item"><strong>Stock:</strong> {product.stock}</li>

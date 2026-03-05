@@ -8,7 +8,7 @@
 		<header class="detail-card__header">
 			<div>
 				<p class="mb-1 text-secondary">Ficha comercial</p>
-				<h3 class="mb-0">{{ product()?.nombre }}</h3>
+				<h3 class="mb-0">{{ productLabel(product()?.nombre || '') }}</h3>
 			</div>
 			<span class="status">{{ (product()?.disponible ?? true) ? 'Disponible' : 'No disponible' }}</span>
 		</header>

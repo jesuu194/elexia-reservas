@@ -38,6 +38,8 @@ export default function ProductListPage() {
     }
   };
 
+  const cleanLabel = (value = '') => String(value).replace(/\bIA\b/g, '').replace(/\s{2,}/g, ' ').trim();
+
   return (
     <section className="card shadow-sm border-0 app-panel">
       <div className="card-body">
@@ -65,8 +67,8 @@ export default function ProductListPage() {
               <tbody>
                 {products.map((product) => (
                   <tr key={product._id}>
-                    <td>{product.nombre}</td>
-                    <td>{product.descripcion}</td>
+                    <td>{cleanLabel(product.nombre)}</td>
+                    <td>{cleanLabel(product.descripcion)}</td>
                     <td>{product.precio}</td>
                     <td>{product.stock}</td>
                     <td>{product.disponible ? 'Si' : 'No'}</td>

@@ -75,4 +75,8 @@ export class List implements OnInit {
       }
     });
   }
+
+  productLabel(value = ''): string {
+    return value.replace(/\bIA\b/g, '').replace(/\s{2,}/g, ' ').trim();
+  }
 }

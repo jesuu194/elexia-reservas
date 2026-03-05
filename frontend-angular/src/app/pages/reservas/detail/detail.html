@@ -19,7 +19,7 @@
 		<div class="detail-grid">
 			<article>
 				<span>Producto</span>
-				<strong>{{ reserva()?.producto }}</strong>
+				<strong>{{ productLabel(reserva()?.producto || '') }}</strong>
 			</article>
 			<article>
 				<span>Fecha</span>

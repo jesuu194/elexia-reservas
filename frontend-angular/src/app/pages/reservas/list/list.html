@@ -50,7 +50,7 @@
 				<tbody>
 					<tr *ngFor="let r of reservas()">
 						<td class="fw-semibold">{{ r.cliente }}</td>
-						<td class="text-secondary">{{ r.producto }}</td>
+						<td class="text-secondary">{{ productLabel(r.producto || '') }}</td>
 						<td>{{ r.fecha | date:'shortDate' }}</td>
 						<td>{{ r.cantidad }}</td>
 						<td>

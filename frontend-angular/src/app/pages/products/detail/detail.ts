@@ -56,12 +56,20 @@ export class Detail implements OnInit {
       'Suite Conversacional Negocios': 'La opcion mas completa para escalar reservas con un sistema conectado.'
     };
 
-    return map[product.nombre] || product.descripcion || 'Solucion pensada para vender mas con IA.';
+    return this.stripIaToken(map[product.nombre] || product.descripcion || 'Solucion pensada para vender mas.');
   }
 
   urgencyText(stock = 0): string {
     if (stock <= 30) return 'Quedan pocas plazas de implementacion esta semana.';
     if (stock <= 55) return 'Alta demanda: activa este servicio antes que tu competencia.';
     return 'Disponible para implementacion inmediata.';
+  }
+
+  productLabel(name = ''): string {
+    return this.stripIaToken(name);
+  }
+
+  private stripIaToken(value = ''): string {
+    return value.replace(/\bIA\b/g, '').replace(/\s{2,}/g, ' ').trim();
   }
 }

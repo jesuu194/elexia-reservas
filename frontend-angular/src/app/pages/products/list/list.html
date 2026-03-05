@@ -1,7 +1,7 @@
 <section class="products-page">
 	<header class="products-page__header">
 		<div>
-			<p class="products-page__eyebrow">Catalogo comercial IA</p>
+			<p class="products-page__eyebrow">Catalogo comercial</p>
 			<h2 class="mb-1">Productos que convierten visitas en reservas</h2>
 			<p class="text-secondary mb-0">Presenta tus soluciones con una propuesta clara de valor para impulsar compras.</p>
 		</div>
@@ -44,7 +44,7 @@
 			<article class="product-card" *ngFor="let p of products()">
 				<header class="product-card__top">
 					<div>
-						<h3>{{ p.nombre }}</h3>
+						<h3>{{ productLabel(p.nombre) }}</h3>
 						<p>{{ marketingDescription(p) }}</p>
 					</div>
 					<span class="price">{{ p.precio | currency:'USD' }}</span>

@@ -131,7 +131,7 @@ export default function ReservaFormPage() {
           <div className="col-md-4 d-flex align-items-center">
             <div className="form-check mt-4">
               <input className="form-check-input" type="checkbox" name="asistidaPorIA" checked={form.asistidaPorIA} onChange={onChange} id="asistidaPorIA" />
-              <label className="form-check-label" htmlFor="asistidaPorIA">Asistida por IA</label>
+              <label className="form-check-label" htmlFor="asistidaPorIA">Asistencia automatica</label>
             </div>
           </div>
 

@@ -38,6 +38,11 @@ h6,
 .app-navbar-react {
   background: linear-gradient(120deg, #083a4a 0%, #0f4f63 55%, #166981 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(3px);
+}
+
+.app-navbar-react__inner {
+  gap: 0.65rem;
 }
 
 .app-brand-react {
@@ -45,6 +50,23 @@ h6,
   align-items: center;
   gap: 0.6rem;
   color: #f8fbff;
+}
+
+.app-brand-react__text {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.app-brand-react__text strong {
+  font-size: 1rem;
+}
+
+.app-brand-react__text small {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.86;
 }
 
 .app-brand-react__dot {
@@ -58,14 +80,30 @@ h6,
 .app-navbar-react .nav-link {
   color: rgba(245, 252, 255, 0.88);
   font-weight: 600;
+  border-radius: 999px;
+  padding: 0.38rem 0.75rem;
+}
+
+.app-navbar-react .nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .app-navbar-react .nav-link.active {
   color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 0.35rem;
-  text-decoration-thickness: 2px;
-  text-decoration-color: #ffbc77;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.app-navbar-react .navbar-nav {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.32rem;
+  border-radius: 999px;
+}
+
+.app-navbar-react__cta {
+  border-radius: 999px;
+  padding-inline: 0.85rem;
+  color: #0c4456;
 }
 
 .hero-react {
@@ -276,6 +314,11 @@ h6,
 }
 
 @media (max-width: 767.98px) {
+  .app-navbar-react .navbar-nav {
+    border-radius: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
   .hero-react {
     padding: 1.25rem;
   }

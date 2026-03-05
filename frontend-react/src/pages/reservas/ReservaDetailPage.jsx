@@ -27,12 +27,12 @@ export default function ReservaDetailPage() {
       <div className="card-body">
         <h2 className="h4">Reserva de {reserva.cliente}</h2>
         <ul className="list-group mb-3">
-          <li className="list-group-item"><strong>Producto:</strong> {reserva.producto}</li>
+          <li className="list-group-item"><strong>Producto:</strong> {String(reserva.producto || '').replace(/\bIA\b/g, '').replace(/\s{2,}/g, ' ').trim()}</li>
           <li className="list-group-item"><strong>Fecha:</strong> {new Date(reserva.fecha).toLocaleDateString()}</li>
           <li className="list-group-item"><strong>Cantidad:</strong> {reserva.cantidad}</li>
           <li className="list-group-item"><strong>Estado:</strong> {reserva.estado}</li>
           <li className="list-group-item"><strong>Descripcion:</strong> {reserva.descripcion}</li>
-          <li className="list-group-item"><strong>IA:</strong> {reserva.asistidaPorIA ? 'Si' : 'No'}</li>
+          <li className="list-group-item"><strong>Asistencia:</strong> {reserva.asistidaPorIA ? 'Automatica' : 'Manual'}</li>
         </ul>
         <Link className="btn btn-secondary" to="/reservas">Volver</Link>
       </div>

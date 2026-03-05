@@ -4,14 +4,14 @@ export default function HomePage() {
   return (
     <div className="d-grid gap-4">
       <section className="hero-react">
-        <span className="hero-react__badge">Elexia - Automatizacion de reservas con IA</span>
+        <span className="hero-react__badge">Elexia - Automatizacion de reservas</span>
         <h1 className="display-5 fw-bold mt-2 mb-3">Automatiza reservas para restaurantes, clinicas, gimnasios y mas</h1>
         <p className="lead mb-4">
           En Elexia convertimos consultas en reservas confirmadas con chatbots y agentes de voz que atienden 24/7.
         </p>
         <div className="d-flex gap-2 flex-wrap">
           <Link className="btn btn-primary" to="/reservas">Ver pipeline de reservas</Link>
-          <Link className="btn btn-outline-light" to="/productos">Explorar servicios IA</Link>
+          <Link className="btn btn-outline-light" to="/productos">Explorar servicios</Link>
         </div>
       </section>
 
@@ -55,7 +55,7 @@ export default function HomePage() {
           <div className="industries-grid">
             <article className="industry-card"><h3>Restaurantes</h3><p>Reserva de mesas, turnos y confirmaciones automaticas.</p></article>
             <article className="industry-card"><h3>Clinicas</h3><p>Agenda de citas, recordatorios y reprogramaciones sin friccion.</p></article>
-            <article className="industry-card"><h3>Gimnasios</h3><p>Reservas de clases, cupos y renovaciones con IA.</p></article>
+            <article className="industry-card"><h3>Gimnasios</h3><p>Reservas de clases, cupos y renovaciones automatizadas.</p></article>
             <article className="industry-card"><h3>Centros de belleza</h3><p>Citas por servicio y profesional con confirmacion inmediata.</p></article>
             <article className="industry-card"><h3>Talleres y academias</h3><p>Plazas, calendario y asistencia automatizada.</p></article>
             <article className="industry-card"><h3>Consultorias</h3><p>Captacion automatica de leads y reuniones calificadas.</p></article>

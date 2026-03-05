@@ -72,7 +72,7 @@ export default function ReservaListPage() {
                   <th>Fecha</th>
                   <th>Cantidad</th>
                   <th>Estado</th>
-                  <th>IA</th>
+                  <th>Asistencia</th>
                   <th>Acciones</th>
                 </tr>
               </thead>
@@ -80,11 +80,11 @@ export default function ReservaListPage() {
                 {reservas.map((reserva) => (
                   <tr key={reserva._id}>
                     <td>{reserva.cliente}</td>
-                    <td>{reserva.producto}</td>
+                    <td>{String(reserva.producto || '').replace(/\bIA\b/g, '').replace(/\s{2,}/g, ' ').trim()}</td>
                     <td>{new Date(reserva.fecha).toLocaleDateString()}</td>
                     <td>{reserva.cantidad}</td>
                     <td>{reserva.estado}</td>
-                    <td>{reserva.asistidaPorIA ? 'Si' : 'No'}</td>
+                    <td>{reserva.asistidaPorIA ? 'Automatica' : 'Manual'}</td>
                     <td className="d-flex gap-2">
                       <Link className="btn btn-sm btn-info" to={`/reservas/${reserva._id}`}>Ver</Link>
                       <Link className="btn btn-sm btn-warning" to={`/reservas/${reserva._id}/editar`}>Editar</Link>

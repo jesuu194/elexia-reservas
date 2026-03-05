@@ -2,7 +2,10 @@
 	<div class="container">
 		<a class="navbar-brand app-brand" routerLink="/">
 			<span class="app-brand__dot"></span>
-			Elexia Reservas IA
+			<span class="app-brand__text">
+				<strong>Elexia Reservas</strong>
+				<small>Gestion comercial</small>
+			</span>
 		</a>
 
 		<button
@@ -17,7 +20,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="collapse navbar-collapse" id="mainNavbar">
+		<div class="collapse navbar-collapse app-navbar__collapse" id="mainNavbar">
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
 				<li class="nav-item">
 					<a class="nav-link" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
@@ -29,7 +32,7 @@
 					<a class="nav-link" routerLink="/reservas" routerLinkActive="active-link">Reservas</a>
 				</li>
 				<li class="nav-item ms-lg-2">
-					<a class="btn btn-sm btn-light fw-semibold" routerLink="/reservas/nueva">Nueva reserva</a>
+					<a class="btn btn-sm btn-light fw-semibold app-navbar__cta" routerLink="/reservas/nueva">Crear reserva</a>
 				</li>
 			</ul>
 		</div>
