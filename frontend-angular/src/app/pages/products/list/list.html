@@ -3,9 +3,9 @@
 		<div>
 			<p class="products-page__eyebrow">Catalogo comercial</p>
 			<h2 class="mb-1">Productos que convierten visitas en reservas</h2>
-			<p class="text-secondary mb-0">Presenta tus soluciones con una propuesta clara de valor para impulsar compras.</p>
+			<p class="text-secondary mb-0">Explora servicios, compara opciones y prueba el que mejor encaje con tu negocio.</p>
 		</div>
-		<a class="btn btn-success" routerLink="/productos/nuevo">Nuevo producto</a>
+		<a class="btn btn-success" routerLink="/reservas/nueva">Probar ahora</a>
 	</header>
 
 	<section class="products-page__kpis">
@@ -37,7 +37,7 @@
 
 		<div *ngIf="!loading() && !products().length" class="empty-state">
 			<h3>No hay productos</h3>
-			<p>Crea el primer servicio para empezar a registrar reservas.</p>
+			<p>En breve volveremos a publicar nuevas soluciones para tu sector.</p>
 		</div>
 
 		<div class="products-grid" *ngIf="!loading() && products().length">
@@ -61,9 +61,8 @@
 				<p class="product-card__benefit">{{ marketingBenefit(p) }}</p>
 
 				<div class="actions">
-					<a class="btn btn-info" [routerLink]="['/productos', p._id || '']">Ver oferta</a>
-					<a class="btn btn-warning" [routerLink]="['/productos', p._id || '', 'editar']">Editar</a>
-					<button class="btn btn-danger" (click)="deleteProduct(p._id || '')">Eliminar</button>
+					<a class="btn btn-info" [routerLink]="['/productos', p._id || '']">Ver detalle</a>
+					<a class="btn btn-success" routerLink="/reservas/nueva">Probar servicio</a>
 				</div>
 			</article>
 		</div>

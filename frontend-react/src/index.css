@@ -173,9 +173,69 @@ h6,
 }
 
 .app-footer-react {
-  background: #082430;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(38, 155, 192, 0.2), rgba(38, 155, 192, 0) 32%),
+    radial-gradient(circle at 85% 100%, rgba(255, 167, 91, 0.16), rgba(255, 167, 91, 0) 30%),
+    #082430;
   color: #d8e8ee;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.2rem;
+}
+
+.footer-react__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.footer-react__eyebrow {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #9ed4e3;
+}
+
+.footer-react__title {
+  margin-bottom: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #a8d8e5;
+}
+
+.footer-react__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.footer-react__links a {
+  color: #e6f3f7;
+  text-decoration: none;
+}
+
+.footer-react__links a:hover {
+  text-decoration: underline;
+}
+
+.footer-react__cta {
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.footer-react__stack {
+  font-size: 0.8rem;
+  color: #bddbe4;
+}
+
+.footer-react__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-block: 0.85rem 1rem;
 }
 
 .pill {
@@ -314,6 +374,10 @@ h6,
 }
 
 @media (max-width: 767.98px) {
+  .footer-react__grid {
+    grid-template-columns: 1fr;
+  }
+
   .app-navbar-react .navbar-nav {
     border-radius: 0.8rem;
     margin-top: 0.5rem;

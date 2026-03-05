@@ -40,20 +40,6 @@ export class List implements OnInit {
     });
   }
 
-  deleteProduct(id: string) {
-    if (!confirm('¿Seguro que deseas eliminar este producto?')) return;
-    this.loading.set(true);
-    this.productService.delete(id).subscribe({
-      next: () => {
-        this.fetchProducts();
-      },
-      error: () => {
-        this.error.set('No se pudo eliminar el producto');
-        this.loading.set(false);
-      }
-    });
-  }
-
   nextPage() {
     if (this.page() * this.limit < this.total()) {
       this.page.set(this.page() + 1);

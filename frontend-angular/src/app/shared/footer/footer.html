@@ -1,6 +1,28 @@
 <footer class="footer mt-auto">
-	<div class="container py-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
-		<p class="mb-0 small">&copy; 2026 Elexia Reservas IA. Plataforma de gestion comercial.</p>
-		<p class="mb-0 small">Node + Angular + React + MongoDB</p>
+	<div class="container footer__grid">
+		<section class="footer__brand">
+			<p class="footer__eyebrow mb-1">Elexia Reservas</p>
+			<h3 class="h5 mb-2">Convierte visitas en reservas confirmadas</h3>
+			<p class="mb-0">Flujos claros, seguimiento comercial y una experiencia profesional para tus clientes.</p>
+		</section>
+
+		<section>
+			<p class="footer__title">Navegacion</p>
+			<ul class="footer__links">
+				<li><a routerLink="/">Inicio</a></li>
+				<li><a routerLink="/productos">Productos</a></li>
+				<li><a routerLink="/reservas">Reservas</a></li>
+			</ul>
+		</section>
+
+		<section>
+			<p class="footer__title">Accion rapida</p>
+			<a class="btn btn-light btn-sm footer__cta" routerLink="/reservas/nueva">Solicitar prueba</a>
+			<p class="footer__stack mb-0 mt-2">Node + Angular + React + MongoDB</p>
+		</section>
+	</div>
+
+	<div class="container footer__bottom">
+		<p class="mb-0 small">&copy; 2026 Elexia Reservas. Todos los derechos reservados.</p>
 	</div>
 </footer>
